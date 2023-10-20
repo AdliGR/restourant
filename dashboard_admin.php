@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="soft-ui-dashboard-main/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="soft-ui-dashboard-main/assets/img/favicon.png">
   <title>
-    Soft UI Dashboard by Creative Tim
+    Restorant Yakin Gile
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -114,7 +114,7 @@
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
               <li class="nav-item d-flex align-items-center">
-                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-soft-ui-dashboard">log out</a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" href="logout.php">Logout</a>
               </li>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
