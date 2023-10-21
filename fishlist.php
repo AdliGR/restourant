@@ -1,13 +1,16 @@
 <?php
 include 'koneksi.php';
 
-$sql = "SELECT * FROM menu";
-$result = $koneksi->query($sql);
+$category = 'Fish';
+$sql = "SELECT * FROM menu WHERE category = :category";
+$stmt = $koneksi->prepare($sql);
+$stmt->bindParam(':category', $category);
+$stmt->execute();
 
-if ($result->rowCount() > 0) {
+if ($stmt->rowCount() > 0) {
     $nomor = 1;
 
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo '<div class="card animated">';
         echo '<div class="card-body">';
         echo '<div class="row">';
@@ -27,6 +30,6 @@ if ($result->rowCount() > 0) {
         $nomor++;
     }
 } else {
-    echo 'Tidak ada data menu yang tersedia.';
+    echo 'Tidak ada data menu Fish yang tersedia.';
 }
 ?>

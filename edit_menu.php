@@ -43,6 +43,19 @@ if ($row) {
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <style>
+    .animated {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .animated.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -58,7 +71,7 @@ if ($row) {
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="dashboard_admin.php">
+          <a class="nav-link" href="dashboard_admin.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -113,10 +126,6 @@ if ($row) {
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type heresoft-ui-dashboard-main.">
-            </div>
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
@@ -138,7 +147,7 @@ if ($row) {
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container">
+    <div class="container animated">
         <h1 class="mt-4">Edit Menu</h1>
         <div class="row mt-4">
             <div class="col-lg-6">
@@ -283,7 +292,23 @@ if ($row) {
     </div>
   </div>
   <!--   Script tambahan   -->
-  
+  <script>
+    const elements = document.querySelectorAll('.animated');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    });
+
+    elements.forEach(element => {
+      observer.observe(element);
+    });
+  </script>
   <!--   Core JS Files   -->
   <script src="soft-ui-dashboard-main/assets/js/core/popper.min.js"></script>
   <script src="soft-ui-dashboard-main/assets/js/core/bootstrap.min.js"></script>
