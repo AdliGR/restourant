@@ -2,9 +2,9 @@
     require_once('database.php'); 
     $db= $conn; // update with your database connection
     //By default, error messages are empty
-    $register=$valid=$fnameErr=$lnameErr=$emailErr=$passErr=$cpassErr='';
+    $register=$valid=$usernameErr=$emailErr=$passErr=$cpassErr='';
     //By default,set input values are empty
-    $set_firstName=$set_lastName=$set_email='';
+    $set_username=$set_email='';
 
     extract($_POST);
     if(isset($_POST['submit']))
@@ -22,11 +22,11 @@
         //Username Validation
         if(empty($user_name))
         {
-            $usernameErr="Username is Required"; 
+            $usernameErr="Username diperlukan"; 
         }
         else if (!preg_match($validName,$user_name)) 
         {
-            $usernameErr="Digits are not allowed";
+            $usernameErr="Digit tidak diperbolehkan";
         }
         else
         {
@@ -36,11 +36,11 @@
         //Email Address Validation
         if(empty($email))
         {
-            $emailErr="Email is Required"; 
+            $emailErr="Email diperlukan"; 
         }
         else if (!preg_match($validEmail,$email)) 
         {
-            $emailErr="Invalid Email Address";
+            $emailErr="Email address salah";
         }
         else
         {
@@ -50,11 +50,11 @@
         //Password validation 
         if(empty($password))
         {
-            $passErr="Password is Required"; 
+            $passErr="Password diperlukan"; 
         } 
         else if (!preg_match($uppercasePassword,$password) || !preg_match($lowercasePassword,$password) || !preg_match($digitPassword,$password) || !preg_match($symbolPassword,$password) || !preg_match($minEightPassword,$password) || preg_match($spacesPassword,$password)) 
         {
-            $passErr="Password must be at least one uppercase letter, lowercase letter, digit, a special character with no spaces and minimum 8 length";
+            $passErr="Password diperlukan 1 huruf besar, 1 huruf kecil, 1 digit, 1 special karakter dengan tidak ada spasi dan minimum 8 panjang";
         }
         else
         {
@@ -64,7 +64,7 @@
         //Form validation for confirm password
         if($cpassword!=$password)
         {
-            $cpassErr="Confirm Password doest Matched";
+            $cpassErr="Konfirmasi password tidak sama";
         }
         else
         {
@@ -82,7 +82,7 @@
             $checkEmail=unique_email($email);
             if($checkEmail)
             {
-                $register=$email." is already exist";
+                $register=$email." sudah ada";
             }
             else
             {
@@ -135,7 +135,7 @@
         $exec= $query->execute();
         if($exec==true)
         {
-            return "You are registered successfully";
+            return "Selamat, anda sudah di registrasi";
         }
         else
         {
