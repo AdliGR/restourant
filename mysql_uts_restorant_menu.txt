@@ -1,0 +1,11 @@
+create database uts_restorant;
+use uts_restorant;
+create table menu(
+	nama_makanan varchar(100),
+	category varchar(100),
+	harga int(15),
+	deskripsi varchar(8000)
+);
+desc menu;
+select * from menu;
+insert into menu values('Ayam Bakar', 'Chicken', 8000, 'Desc.');
