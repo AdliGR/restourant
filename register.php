@@ -47,7 +47,7 @@
 
                 <!--====registration form====-->
                 <div class="registration-form">
-                    <h4 class="text-center">Create a New Account</h4>
+                    <h4 class="text-center">Membuat Akun Baru</h4>
                 
                     <p class="text-success text-center">
                         <?php 
@@ -60,7 +60,7 @@
                         <div class="form-group">
                             <label for="email">Username</label>
                         
-                            <input type="text" class="form-control" placeholder="Enter Username" name="username" value="<?php echo $set_username;?>">
+                            <input type="text" class="form-control" placeholder="Masukkan Username" name="username" value="<?php echo $set_username;?>">
 
                             <p class="err-msg">
                                 <?php 
@@ -73,7 +73,7 @@
                         <div class="form-group">
                             <label for="email">Email:</label>
                             
-                            <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php echo $set_email;?>">
+                            <input type="text" class="form-control" id="email" placeholder="Masukkan email" name="email" value="<?php echo $set_email;?>">
 
                             <p class="err-msg">
                                 <?php 
@@ -86,7 +86,7 @@
                         <div class="form-group">
                             <label for="pwd">Password:</label>
                             
-                            <input type="password" class="form-control"  placeholder="Enter password" name="password">
+                            <input type="password" class="form-control"  placeholder="Masukkan password" name="password">
                             
                             <p class="err-msg">
                                 <?php  
@@ -97,8 +97,8 @@
 
                         <!--//Confirm Password//-->
                         <div class="form-group">
-                            <label for="pwd">Confirm Password:</label>
-                            <input type="password" class="form-control" placeholder="Enter Confirm password" name="cpassword">
+                            <label for="pwd">Konfirmasi Password:</label>
+                            <input type="password" class="form-control" placeholder="Masukkan password lagi" name="cpassword">
                             
                             <p class="err-msg">
                                 <?php 
@@ -106,8 +106,12 @@
                                 ?>
                             </p>
                         </div>
-                
-                        <button type="submit" class="btn btn-danger" name="submit">Register Now</button>
+
+                        <div class="form-group">
+                            <input type="checkbox" name='admin' value="Admin"> Cek box ini untuk menjadi Admin.
+                        </div>
+
+                        <button type="submit" class="btn btn-danger" name="submit">Register Sekarang</button>
                     </form>
                 </div>
             </div>
