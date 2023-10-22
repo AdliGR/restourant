@@ -12,7 +12,7 @@ if ($result->rowCount() > 0) {
         echo '<div class="card-body">';
         echo '<div class="row">';
         echo '<div class="col">' . $nomor . '</div>';
-        echo '<div class="col"><img src="' . $row['file_path'] . '" alt="' . $row['nama_makanan'] . '" width="150"></div>';
+        echo '<div class="col"><img src="' . $row['file_path'] . '" alt="' . $row['nama_makanan'] . '" width="250"></div>';
         echo '<div class="col"><p>' . $row['nama_makanan'] . '</p></div>';
         echo '<div class="col"><p>' . $row['category'] . '</p></div>';
         echo '<div class="col"><p>Rp ' . number_format($row['harga'], 0, ',', '.') . '</p></div>';
