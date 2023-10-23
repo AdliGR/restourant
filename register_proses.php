@@ -54,7 +54,7 @@
         } 
         else if (!preg_match($uppercasePassword,$password) || !preg_match($lowercasePassword,$password) || !preg_match($digitPassword,$password) || !preg_match($symbolPassword,$password) || !preg_match($minEightPassword,$password) || preg_match($spacesPassword,$password)) 
         {
-            $passErr="Password diperlukan 1 huruf besar, 1 huruf kecil, 1 digit, 1 special karakter dengan tidak ada spasi dan minimum 8 panjang";
+            $passErr="Password diperlukan 1 huruf besar, huruf kecil, digit, sebuah special karakter dengan tidak ada spasi dan minimum 8 panjang";
         }
         else
         {
@@ -97,6 +97,7 @@
             $set_username= $user_name;
             $set_email=    $email;
         }
+        $admin = $_POST['admin'];
         //Check all fields are vakid or not
     }
 
@@ -126,12 +127,12 @@
     }
 
     //Function to insert user data into database table
-    function register($username,$email,$password)
+    function register($username, $email, $password, $admin)
     {
         global $db;
-        $sql="INSERT INTO users(user_name,email,password) VALUES(?,?,?)";
+        $sql="INSERT INTO users(user_name, email, password, admin) VALUES(?, ?, ?, ?)";
         $query=$db->prepare($sql);
-        $query->bind_param('sss',$username,$email,$password);
+        $query->bind_param('ssss', $username, $email, $password, $admin);
         $exec= $query->execute();
         if($exec==true)
         {
