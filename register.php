@@ -107,8 +107,9 @@
                             </p>
                         </div>
 
+                        <!--//Becoming Admin//-->
                         <div class="form-group">
-                            <input type="checkbox" name='admin' value="Admin"> Cek box ini untuk menjadi Admin.
+                            <input type="checkbox" name='role' value="Admin"> Cek box ini untuk menjadi Admin.
                         </div>
 
                         <button type="submit" class="btn btn-danger" name="submit">Register Sekarang</button>
