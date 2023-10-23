@@ -97,7 +97,7 @@
             $set_username= $user_name;
             $set_email=    $email;
         }
-        $admin = $_POST['admin'];
+        $role = $_POST['role'];
         //Check all fields are vakid or not
     }
 
@@ -127,12 +127,12 @@
     }
 
     //Function to insert user data into database table
-    function register($username, $email, $password, $admin)
+    function register($username, $email, $password, $role)
     {
         global $db;
-        $sql="INSERT INTO users(user_name, email, password, admin) VALUES(?, ?, ?, ?)";
+        $sql="INSERT INTO users(user_name, email, password, role) VALUES(?, ?, ?, ?)";
         $query=$db->prepare($sql);
-        $query->bind_param('ssss', $username, $email, $password, $admin);
+        $query->bind_param('ssss', $username, $email, $password, $role);
         $exec= $query->execute();
         if($exec==true)
         {
