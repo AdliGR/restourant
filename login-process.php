@@ -10,17 +10,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $query = "SELECT * FROM user WHERE email = :email AND password = :password";
+        $query = "SELECT * FROM user WHERE email = :email";
         $stmt = $koneksi->prepare($query);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
-            $_SESSION['user'] = $email;
-            header("Location: dashboard_admin.php"); 
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $hashed_password = $user['password'];
+
+            if (password_verify($password, $hashed_password)) {
+                $_SESSION['user'] = $email;
+
+                if ($user['role'] == 'Admin') {
+                    header("Location: dashboard_admin.php");
+                } else {
+                    header("Location: dashboard_user.php");
+                }
+
+                // Pesan sukses
+                echo "<script>alert('Login berhasil. Selamat datang, " . $user['firstname'] . "');</script>";
+            } else {
+                echo "<script>alert('Login gagal: Password salah.');</script>";
+                echo "<script>window.location.href = 'login2.php';</script>";
+            }
         } else {
-            echo "<script>alert('Login gagal: Email atau Password salah.');</script>";
+            echo "<script>alert('Login gagal: Email tidak ditemukan.');</script>";
             echo "<script>window.location.href = 'login2.php';</script>";
         }
     } else {
