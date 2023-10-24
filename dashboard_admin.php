@@ -84,7 +84,7 @@ session_start();
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Menu Makanan (Admin)</span>
+            <span class="nav-link-text ms-1">Menu Makanan <br>(Admin)</span>
           </a>
         </li>
         <li class="nav-item">
