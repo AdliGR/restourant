@@ -85,7 +85,7 @@ session_start()
               }
               else
               {
-                $url  = "dashboard_customer.php";
+                $url  = "index.php";
                 $text = "Customer";
               }
             ?>
