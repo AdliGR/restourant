@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<script>alert('Login berhasil. Selamat datang, " . $user['firstname'] . "');</script>";
             } else {
                 echo "<script>alert('Login gagal: Password salah.');</script>";
-                echo "<script>window.location.href = 'login2.php';</script>";
+                echo "<script>window.location.href = 'login.php';</script>";
             }
         } else {
             echo "<script>alert('Login gagal: Email tidak ditemukan.');</script>";
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         echo "<script>alert('Captcha salah!');</script>";
-        echo "<script>window.location.href = 'login2.php';</script>";
+        echo "<script>window.location.href = 'login.php';</script>";
     }
 }
 ?>
