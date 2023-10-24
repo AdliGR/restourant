@@ -231,7 +231,7 @@ session_start();
         </div>
       </div>
       <br>
-      <h3 class="animated">List menu</h3>
+      <h3 class="">List menu</h3>
       <br>
       <div>
         <?php include 'menu.php'?>

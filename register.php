@@ -18,8 +18,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="soft-ui-dashboard-main/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="soft-ui-dashboard-main/assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="soft-ui-dashboard-main/assets/img/alien.png">
+  <link rel="icon" type="image/png" href="soft-ui-dashboard-main/assets/img/alien.png">
   <title>
     Register Restoran Yakin Gile
   </title>
