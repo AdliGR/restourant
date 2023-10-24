@@ -218,7 +218,7 @@ session_start();
                       <div class="numbers">
                         <p class="text-sm mb-0 text-capitalize font-weight-bold">
                         <h5 class="font-weight-bolder mb-0">
-                          Baverage
+                          Beverage
                         </h5>
                         </p>
                       </div>

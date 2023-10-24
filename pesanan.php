@@ -180,9 +180,10 @@ session_start()
             if ($role == 'User') 
             {
             
-                if (isset($_GET['action']) && $_GET['action'] == 'delete_pesanan') {
+                if (isset($_GET['action']) && $_GET['action'] == 'delete_pesanan') 
+                {
                     include 'deletepesanan.php';
-                    echo "<script>alert('ID Tidak Ada')</script>";
+                    echo "<script>alert('Berhasil dihapus')</script>";
                 }
                 echo '<li class="nav-item">';
                 echo '<a class="nav-link" href="pesanan.php?action=delete_pesanan">';
